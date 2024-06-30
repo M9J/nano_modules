@@ -1,6 +1,11 @@
-import DateTime from "./DateTime/DateTime.js";
 import RemoteHelloWorld from "./RemoteHelloWorld/RemoteHelloWorld.js";
+import DateTime from "./DateTime/DateTime.js";
+import Counter from "./Counter/Counter.js";
 
-const INDEX = [DateTime, RemoteHelloWorld];
+const INDEX = [
+  Counter, 
+  DateTime, 
+  RemoteHelloWorld
+];
 
 export default INDEX;
