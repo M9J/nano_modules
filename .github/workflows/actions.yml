@@ -1,8 +1,8 @@
-name: Actions
-on:
-  schedule:
-    - cron: "*/10 * * * *"
-jobs:
-  purge:
-    name: Purge
-    uses: ./.github/workflows/purge.yml
+#name: Actions
+#on:
+#  schedule:
+#    - cron: "*/10 * * * *"
+#jobs:
+#  purge:
+#    name: Purge
+#    uses: ./.github/workflows/purge.yml
