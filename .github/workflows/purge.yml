@@ -1,0 +1,10 @@
+name: Purge
+on: [workflow_call]
+jobs:
+  purge:
+    name: Purge
+    runs-on: ubuntu-latest
+    steps:
+      - uses: gacts/purge-jsdelivr-cache@v1
+        with:
+          url: https://cdn.jsdelivr.net/gh/M9J/nano_modules/index.js

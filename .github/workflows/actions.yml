@@ -1,0 +1,6 @@
+name: Actions
+on: [push]
+jobs:
+  purge:
+    name: Purge
+    uses: ./.github/workflows/purge.yml
