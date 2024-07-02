@@ -1,0 +1,6 @@
+name: Actions
+on: [push]
+jobs:
+  build:
+    name: Build
+    uses: ./.github/workflows/build.yml
