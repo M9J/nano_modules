@@ -8,6 +8,5 @@ export default class Logger {
     setInterval(() => {
       o.printLineBefore(`Log line ${++line}`);
     }, 1000);
-    return `Log line ${line + 1}`;
   };
 }
