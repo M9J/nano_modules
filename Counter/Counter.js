@@ -6,7 +6,7 @@ export default class Counter {
   MODULE_MAIN = (o) => {
     let c = 0;
     setInterval(() => {
-      o.update(++c);
+      o.print(++c);
     }, 100);
     return c;
   };
