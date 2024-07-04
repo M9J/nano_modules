@@ -8,23 +8,23 @@ export default class Bob {
   MODULE_MAIN = (o) => {
     o.channel.onReceive(this.MODULE_CHANNEL_ID, ({ message, from }) => {
       o.printLine(`${from}: ${message}`);
-      let tmr1 = setTimeout(() => {
-        clearTimeout(tmr1);
+      //let tmr1 = setTimeout(() => {
+        //clearTimeout(tmr1);
         o.channel.send({
           from: this.MODULE_CHANNEL_ID,
           to: "alice@nano.mods",
           message: parseInt(message) + 1,
         });
-      }, 1000);
+      //}, 1000);
     });
-    let tmr = setTimeout(() => {
-      clearTimeout(tmr);
+    //let tmr = setTimeout(() => {
+      //clearTimeout(tmr);
       console.log("message sent");
       o.channel.send({
         from: this.MODULE_CHANNEL_ID,
         to: "alice@nano.mods",
         message: "1",
       });
-    }, 1000);
+    //}, 1000);
   };
 }
