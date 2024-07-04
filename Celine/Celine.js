@@ -1,6 +1,6 @@
 export default class Celine {
   MODULE_NAME = "Celine Module";
-  MODULE_DESCRIPTION = "Receives message and reply back";
+  MODULE_DESCRIPTION = "Sends message to Bob";
   MODULE_VERSION = "1.0";
   MODULE_PULSE = true;
   MODULE_CHANNEL_ID = "celine@nano.mods";
