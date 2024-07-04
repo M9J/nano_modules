@@ -11,7 +11,7 @@ export default class Bob {
       o.printLine(`${from}: ${message}`);
         o.channel.send({
           from: this.MODULE_CHANNEL_ID,
-          to: from,
+          to: "alice@nano.mods",
           message: parseInt(message) + 1,
         });
     });
