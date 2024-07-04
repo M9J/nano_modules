@@ -1,8 +1,9 @@
-export default class Receiver {
-  MODULE_NAME = "Receiver Module 1";
-  MODULE_DESCRIPTION = "This module receives message";
+export default class Alice {
+  MODULE_NAME = "Alice Module";
+  MODULE_DESCRIPTION = "This module receives message and reply";
   MODULE_VERSION = "1.0";
-  MODULE_CHANNEL_ID = "receiver@nano.mods";
+  MODULE_PULSE = true;
+  MODULE_CHANNEL_ID = "alice@nano.mods";
 
   MODULE_MAIN = (o) => {
     o.channel.onReceive(this.MODULE_CHANNEL_ID, ({ message, from }) => {
@@ -11,7 +12,7 @@ export default class Receiver {
         clearTimeout(tmr1);
         o.channel.send({
           from: this.MODULE_CHANNEL_ID,
-          to: "sender@nano.mods",
+          to: "bob@nano.mods",
           message: parseInt(message) + 1,
         });
       }, 1000);
