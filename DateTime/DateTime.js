@@ -7,7 +7,7 @@ export default class DateTime {
 
   dateTime(o) {
     setInterval(() => {
-      o.printLine(new Date().toLocaleString());
+      o.print(new Date().toLocaleString());
     }, 1000);
     return new Date().toLocaleString();
   }
