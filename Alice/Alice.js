@@ -8,14 +8,11 @@ export default class Alice {
   MODULE_MAIN = (o) => {
     o.channel.onReceive(this.MODULE_CHANNEL_ID, ({ message, from }) => {
       o.printLine(`${from}: ${message}`);
-      //let tmr1 = setTimeout(() => {
-        //clearTimeout(tmr1);
-        o.channel.send({
-          from: this.MODULE_CHANNEL_ID,
-          to: "bob@nano.mods",
-          message: parseInt(message) + 1,
-        });
-      //}, 1000);
+      o.channel.send({
+        from: this.MODULE_CHANNEL_ID,
+        to: from,
+        message: parseInt(message) + 1,
+      });
     });
   };
 }
