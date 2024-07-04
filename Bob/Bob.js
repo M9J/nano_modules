@@ -1,6 +1,6 @@
 export default class Bob {
   MODULE_NAME = "Bob Module";
-  MODULE_DESCRIPTION = "This module sends message and reply";
+  MODULE_DESCRIPTION = "Sends message. Also reply back";
   MODULE_VERSION = "1.0";
   MODULE_PULSE = true;
   MODULE_CHANNEL_ID = "bob@nano.mods";

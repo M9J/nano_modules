@@ -1,6 +1,6 @@
 export default class Alice {
   MODULE_NAME = "Alice Module";
-  MODULE_DESCRIPTION = "This module receives message and reply";
+  MODULE_DESCRIPTION = "Receives message and reply back";
   MODULE_VERSION = "1.0";
   MODULE_PULSE = true;
   MODULE_CHANNEL_ID = "alice@nano.mods";
