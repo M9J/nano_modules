@@ -14,7 +14,7 @@ export default class Celine {
         message: parseInt(message) + 1,
         data: {
           ...data,
-          celine: data.celine + 1
+          celine: data.celine + 1 || 1
         }
       });
     });

@@ -15,7 +15,7 @@ export default class Bob {
           message: parseInt(message) + 1,
           data: {
             ...data,
-            bob: data.bob + 1
+            bob: data.bob + 1 || 1
           }
         });
     });
@@ -26,7 +26,6 @@ export default class Bob {
       message: "1",
       data: {
         bob: 1,
-        alice: 0
       }
     });
 
