@@ -1,22 +1,19 @@
 export default class Celine {
-  MODULE_NAME = "Celine Module";
+  MODULE_NAME = "Celine";
   MODULE_DESCRIPTION = "Sends message to Bob";
   MODULE_VERSION = "1.0";
   MODULE_PULSE = true;
-  MODULE_CHANNEL_ID = "celine@nano.mods";
-
-  MODULE_MAIN = (o) => {
-    o.channel.onReceive(this.MODULE_CHANNEL_ID, ({ message, data, from }) => {
-      o.printLine(`${from}: ${message}, ${data.celine}`);
-      o.channel.send({
-        from: this.MODULE_CHANNEL_ID,
-        to: "bob@nano.mods",
-        message: parseInt(message) + 1,
-        data: {
-          ...data,
-          celine: data.celine + 1 || 1
-        }
-      });
+  MODULE_MAIL_ID = "celine@nano.mods";
+  MODULE_MAIL_HANDLER = ({ message, data, from }) => {
+    if (message === "+2") {
+      data.value = data.value + 2;
+    }
+    this.MODULE_OUTPUT.printLine(`${from}: ${message}: ${data.value}`);
+    this.MODULE_MAIL.send({
+      from: this.MODULE_MAIL_ID,
+      to: "bob@nano.mods",
+      message: "+3",
+      data: data,
     });
   };
 }

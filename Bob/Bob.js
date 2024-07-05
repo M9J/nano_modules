@@ -1,33 +1,30 @@
 export default class Bob {
-  MODULE_NAME = "Bob Module";
+  MODULE_NAME = "Bob";
   MODULE_DESCRIPTION = "Sends message to Alice";
   MODULE_VERSION = "1.0";
   MODULE_PULSE = true;
-  MODULE_CHANNEL_ID = "bob@nano.mods";
-
-  MODULE_MAIN = (o) => {
-    
-    o.channel.onReceive(this.MODULE_CHANNEL_ID, ({ message, data, from }) => {
-      o.printLine(`${from}: ${message}, ${data.bob}`);
-        o.channel.send({
-          from: this.MODULE_CHANNEL_ID,
-          to: "alice@nano.mods",
-          message: parseInt(message) + 1,
-          data: {
-            ...data,
-            bob: data.bob + 1 || 1
-          }
-        });
-    });
-    
-    o.channel.send({
-      from: this.MODULE_CHANNEL_ID,
+  MODULE_MAIL_ID = "bob@nano.mods";
+  MODULE_MAIL_HANDLER = ({ message, data, from }) => {
+    if (message === "+3") {
+      data.value = data.value + 3;
+    }
+    this.MODULE_OUTPUT.printLine(`${from}: ${message}: ${data.value}`);
+    this.MODULE_MAIL.send({
+      from: this.MODULE_MAIL_ID,
       to: "alice@nano.mods",
-      message: "1",
-      data: {
-        bob: 1,
-      }
+      message: "+1",
+      data: data,
     });
+  };
 
+  MODULE_MAIN = () => {
+    this.MODULE_MAIL.send({
+      from: this.MODULE_MAIL_ID,
+      to: "alice@nano.mods",
+      message: "+1",
+      data: {
+        value: 1,
+      },
+    });
   };
 }

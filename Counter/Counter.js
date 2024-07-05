@@ -3,11 +3,10 @@ export default class Counter {
   MODULE_DESCRIPTION = "Counts from zero";
   MODULE_VERSION = "1.0";
   MODULE_PULSE = true;
-  MODULE_MAIN = (o) => {
+  MODULE_MAIN = () => {
     let c = 0;
     setInterval(() => {
-      o.print(++c);
+      this.MODULE_OUTPUT.print(++c);
     }, 100);
-    return c;
   };
 }
