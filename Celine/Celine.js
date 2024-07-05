@@ -6,12 +6,16 @@ export default class Celine {
   MODULE_CHANNEL_ID = "celine@nano.mods";
 
   MODULE_MAIN = (o) => {
-    o.channel.onReceive(this.MODULE_CHANNEL_ID, ({ message, from }) => {
-      o.printLine(`${from}: ${message}`);
+    o.channel.onReceive(this.MODULE_CHANNEL_ID, ({ message, data, from }) => {
+      o.printLine(`${from}: ${message}, ${data.celine}`);
       o.channel.send({
         from: this.MODULE_CHANNEL_ID,
         to: "bob@nano.mods",
         message: parseInt(message) + 1,
+        data: {
+          ...data,
+          celine: data.celine + 1
+        }
       });
     });
   };

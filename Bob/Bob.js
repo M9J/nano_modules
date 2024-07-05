@@ -7,12 +7,16 @@ export default class Bob {
 
   MODULE_MAIN = (o) => {
     
-    o.channel.onReceive(this.MODULE_CHANNEL_ID, ({ message, from }) => {
-      o.printLine(`${from}: ${message}`);
+    o.channel.onReceive(this.MODULE_CHANNEL_ID, ({ message, data, from }) => {
+      o.printLine(`${from}: ${message}, ${data.bob}`);
         o.channel.send({
           from: this.MODULE_CHANNEL_ID,
           to: "alice@nano.mods",
           message: parseInt(message) + 1,
+          data: {
+            ...data,
+            bob: data.bob + 1
+          }
         });
     });
     
@@ -20,6 +24,9 @@ export default class Bob {
       from: this.MODULE_CHANNEL_ID,
       to: "alice@nano.mods",
       message: "1",
+      data: {
+        bob: 1
+      }
     });
 
   };
