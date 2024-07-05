@@ -25,7 +25,8 @@ export default class Bob {
       to: "alice@nano.mods",
       message: "1",
       data: {
-        bob: 1
+        bob: 1,
+        alice: 0
       }
     });
 

@@ -14,7 +14,8 @@ export default class Alice {
         message: parseInt(message) + 1,
         data: {
           ...data,
-          alice: data.alice + 1
+          alice: data.alice + 1,
+          celine: 0
         }
       });
     });
