@@ -6,4 +6,4 @@ export default [
   () => import("./Counter/Counter.js"),
   () => import("./DateTime/DateTime.js"),
   () => import("./RemoteHelloWorld/RemoteHelloWorld.js"),
-;
+];
