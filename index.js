@@ -1,7 +1,7 @@
 export default [
-  () => import("./Examples/Classroom/Teacher/Teacher.js"),
-  () => import("./Examples/Classroom/Student/Student1.js"),
-  () => import("./Examples/Classroom/Student/Student2.js"),
+  () => import("./Examples/Broadcast/Teacher/Teacher.js"),
+  () => import("./Examples/Broadcast/Student/Student1.js"),
+  () => import("./Examples/Broadcast/Student/Student2.js"),
   () => import("./Examples/SenderReceiver/Bob/Bob.js"),
   () => import("./Examples/SenderReceiver/Alice/Alice.js"),
   () => import("./Examples/SenderReceiver/Celine/Celine.js"),
