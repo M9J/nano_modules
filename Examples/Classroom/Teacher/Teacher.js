@@ -6,6 +6,7 @@ export default class Teacher {
   MODULE_MAIL_ID = "teacher@nano.mods";
   MODULE_MAIN = () => {
     let msgid = 0;
+    this.MODULE_OUTPUT.print(`broadcasting next: ${msgid}`);
     let intrvl1 = setInterval(() => {
       this.MODULE_OUTPUT.printLine(
         `broadcasted: ${msgid}, broadcasting next: ${msgid + 1}`
