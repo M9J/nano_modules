@@ -1,5 +1,5 @@
 export const ModuleLoader = (m) => import(m);
-export default MODULES = [
+export const MODULES = [
   "./Examples/Broadcast/Teacher/Teacher.js",
   "./Examples/Broadcast/Student/Student1.js",
   "./Examples/Broadcast/Student/Student2.js",
