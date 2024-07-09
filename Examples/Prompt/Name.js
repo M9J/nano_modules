@@ -7,6 +7,6 @@ export default class Name {
     nameInput.onchange = (e) => {
       this.MODULE_OUTPUT.printLine(JSON.stringify(e));
     }
-    this.MODULE_OUTPUT.print(nameInput);
+    this.MODULE_OUTPUT.print(nameInput.toString());
   };
 }
