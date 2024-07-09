@@ -7,6 +7,6 @@ export default class Counter {
     let c = 0;
     setInterval(() => {
       this.MODULE_OUTPUT.print(++c);
-    }, 100);
+    }, 0);
   };
 }
