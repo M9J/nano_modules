@@ -1,5 +1,6 @@
 export const ModuleLoader = (m) => import(m);
 export const MODULES = [
+  "./Examples/Prompt/Name.js",
   "./Examples/Broadcast/Teacher/Teacher.js",
   "./Examples/Broadcast/Student/Student1.js",
   "./Examples/Broadcast/Student/Student2.js",
