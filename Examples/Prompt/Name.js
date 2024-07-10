@@ -4,9 +4,14 @@ export default class Name {
   MODULE_VERSION = "1.0";
   MODULE_MAIN = () => {
     const nameInput = document.createElement("input");
-    nameInput.onchange = (e) => {
-      this.MODULE_OUTPUT.printLine(JSON.stringify(e));
-    }
-    this.MODULE_OUTPUT.print(nameInput.toString());
+    nameInput.type = "text";
+    nameInput.onchange = this.onChange.bind(this);
+    console.log(nameInput);
+    this.MODULE_OUTPUT.printElement(nameInput);
   };
+
+  onChange(e) {
+    const name = e.target.value;
+    this.MODULE_OUTPUT.print(`Name: ${name}`);
+  }
 }
