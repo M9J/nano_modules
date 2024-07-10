@@ -7,6 +7,8 @@ export default class Calculator {
     const divRow1 = document.createElement("div");
     const num1 = document.createElement("input");
     num1.type = "text";
+    const plus = document.createElement("span");
+    plus.innerHTML = "+";
     const num2 = document.createElement("input");
     num2.type = "text";
     const button = document.createElement("button");
@@ -16,7 +18,7 @@ export default class Calculator {
       this.MODULE_OUTPUT.print(value);
     }
     divRow1.appendChild(num1);
-    divRow1.appendChild("+");
+    divRow1.appendChild(plus);
     divRow1.appendChild(num2);
     divMain.appendChild(divRow1);
     dovMain.appendChild(button);
