@@ -21,7 +21,7 @@ export default class Calculator {
     divRow1.appendChild(plus);
     divRow1.appendChild(num2);
     divMain.appendChild(divRow1);
-    dovMain.appendChild(button);
+    divMain.appendChild(button);
     this.MODULE_OUTPUT.printElement(divMain);
   };
 
