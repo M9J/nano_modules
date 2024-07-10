@@ -10,8 +10,9 @@ export default class Calculator {
     const num2 = document.createElement("input");
     num2.type = "text";
     const button = document.createElement("button");
+    button.value = "Calculate";
     button.onclick = () => {
-      value = num1.value + num2.value;
+      value = +num1.value + +num2.value;
       this.MODULE_OUTPUT.print(value);
     }
     divRow1.appendChild(num1);
