@@ -14,7 +14,7 @@ export default class Calculator {
     const button = document.createElement("button");
     button.innerHTML = "Calculate";
     button.onclick = () => {
-      value = +num1.value + +num2.value;
+      const value = +num1.value + +num2.value;
       this.MODULE_OUTPUT.print(value);
     }
     divRow1.appendChild(num1);
