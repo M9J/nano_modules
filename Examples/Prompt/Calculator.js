@@ -5,6 +5,7 @@ export default class Calculator {
   MODULE_MAIN = () => {
     const divMain = document.createElement("div");
     const divRow1 = document.createElement("div");
+    divRow1.style = "display: flex;"
     const num1 = document.createElement("input");
     num1.type = "text";
     const plus = document.createElement("span");
