@@ -17,6 +17,7 @@ export default class Mailer {
         epoch: Date.now(),
       },
     });
+    this.MODULE_OUTPUT.printLine(`Sent to ${mailId}`)
     await this.promptForMailId();
   }
 }
