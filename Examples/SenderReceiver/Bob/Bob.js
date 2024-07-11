@@ -7,14 +7,14 @@ export default class Bob {
   MODULE_MAIL_HANDLER = ({ message, data, from }) => {
     if (message === "+3") {
       data.value = data.value + 3;
+      this.MODULE_OUTPUT.printLine(`${from}: ${message}: ${data.value}`);
+      this.MODULE_MAIL.send({
+        from: this.MODULE_MAIL_ID,
+        to: "alice@nano.mods",
+        message: "+1",
+        data: data,
+      });
     }
-    this.MODULE_OUTPUT.printLine(`${from}: ${message}: ${data.value}`);
-    this.MODULE_MAIL.send({
-      from: this.MODULE_MAIL_ID,
-      to: "alice@nano.mods",
-      message: "+1",
-      data: data,
-    });
   };
 
   MODULE_MAIN = () => {

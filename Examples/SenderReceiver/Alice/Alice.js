@@ -7,13 +7,13 @@ export default class Alice {
   MODULE_MAIL_HANDLER = ({ message, data, from }) => {
     if (message === "+1") {
       data.value = data.value + 1;
+      this.MODULE_OUTPUT.printLine(`${from}: ${message}: ${data.value}`);
+      this.MODULE_MAIL.send({
+        from: this.MODULE_MAIL_ID,
+        to: "celine@nano.mods",
+        message: "+2",
+        data: data,
+      });
     }
-    this.MODULE_OUTPUT.printLine(`${from}: ${message}: ${data.value}`);
-    this.MODULE_MAIL.send({
-      from: this.MODULE_MAIL_ID,
-      to: "celine@nano.mods",
-      message: "+2",
-      data: data,
-    });
   };
 }
