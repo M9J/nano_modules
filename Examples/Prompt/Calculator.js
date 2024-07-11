@@ -8,7 +8,7 @@ export default class Calculator {
   
   async calculate() {
     const num1 = await this.MODULE_OUTPUT.prompt("Number 1", true);
-    const num2 = await this.MKDULE_OUTPUT.prompt("Number 2", true);
+    const num2 = await this.MODULE_OUTPUT.prompt("Number 2", true);
     const result = +num1 + +num2;
     this.MODULE_OUTPUT.print(`${num1} + ${num2} = ${result}`);
     this.calculate();
