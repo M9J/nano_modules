@@ -9,7 +9,7 @@ export default class Mailer {
 
   async promptForMailId() {
     const mailId = await this.MODULE_OUTPUT.prompt("Mail ID", true);
-    this.MODULE_MAIL.send({
+    const isSent = await this.MODULE_MAIL.send({
       to: mailId,
       from: this.MODULE_MAIL_ID,
       message: "Test",
@@ -17,7 +17,11 @@ export default class Mailer {
         epoch: Date.now(),
       },
     });
-    this.MODULE_OUTPUT.printLine(`Sent to ${mailId}`)
+    if(isSent) {
+      this.MODULE_OUTPUT.printLine(`Sent to ${mailId}`)
+    } else {
+      this.MODULE_OUTPUT.printLine(`Not sent to ${mailId}`)
+    }
     await this.promptForMailId();
   }
 }
